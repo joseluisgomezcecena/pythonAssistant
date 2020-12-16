@@ -13,7 +13,7 @@ import requests
 
 engine = pyttsx3.init('sapi5') #sapi5 microsoft voice recognition
 voices = engine.getProperty('voices') #voice id 0 = hombre, id 1 = mujer
-engine.setProperty('voice', 'voices[1].id')
+engine.setProperty('voice', voices[1].id)
 
 
 #function speak,  converti texto a voz
@@ -85,6 +85,11 @@ if __name__=='__main__':
 
         elif 'open google' in statement:
             webbrowser.open_new_tab("https://www.google.com")
+            speak("Google chrome is open now")
+            time.sleep(5)
+
+        elif 'open hour by hour' in statement:
+            webbrowser.open_new_tab("http://mxmtsvrandon1/horaxhora/")
             speak("Google chrome is open now")
             time.sleep(5)
 
