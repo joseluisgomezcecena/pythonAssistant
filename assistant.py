@@ -13,7 +13,7 @@ import requests
 
 engine = pyttsx3.init('sapi5') #sapi5 microsoft voice recognition
 voices = engine.getProperty('voices') #voice id 0 = hombre, id 1 = mujer
-engine.setProperty('voice', 'voices[0].id')
+engine.setProperty('voice', 'voices[1].id')
 
 
 #function speak,  converti texto a voz
