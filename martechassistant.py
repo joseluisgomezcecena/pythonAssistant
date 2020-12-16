@@ -47,9 +47,13 @@ def takeCommand():
             print(f"user said:{statement}\n")
 
         except Exception as e:
-            speak("Sorry, i couldn't understand that")
-            return "None"
-        return statement
+            if statement == "":
+                print ('nothing was said')
+                return statement
+            else:
+                speak("Sorry, i couldn't understand that")
+                return "None"
+                return statement
 
 print("Loading AI Assistant G-one")
 speak("Loading AI Assistant")
@@ -70,9 +74,8 @@ if __name__=='__main__':
             print('AI Assistant is shutting down, Good bye')
             break
 
-        elif "ok assistant" in statement or "ok martech" in statement:
-
-
+        if "ok assistant" in statement or "ok martech" in statement or "okay assistant" in statement:
+            time.sleep(3)
             if 'wikipedia' in statement:
                 speak('Searching Wikipedia...')
                 statement =statement.replace("wikipedia", "")
@@ -85,6 +88,12 @@ if __name__=='__main__':
                 webbrowser.open_new_tab("https://www.youtube.com")
                 speak("youtube is open now")
                 time.sleep(5)
+
+            elif 'youtube' in statement:
+                statement = statement.replace("youtube", "")
+                webbrowser.open_new_tab("https://www.youtube.com/results?search_query="+statement)
+                speak("youtubing "+statement)
+                time.sleep(5)    
 
             elif 'open google' in statement:
                 webbrowser.open_new_tab("https://www.google.com")

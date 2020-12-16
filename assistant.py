@@ -88,6 +88,12 @@ if __name__=='__main__':
             speak("Google chrome is open now")
             time.sleep(5)
 
+        elif 'youtube' in statement:
+            statement = statement.replace("youtube", "")
+            webbrowser.open_new_tab("https://www.youtube.com/results?search_query="+statement)
+            speak("youtubing "+statement)
+            time.sleep(5) 
+
         elif 'open hour by hour' in statement:
             webbrowser.open_new_tab("http://mxmtsvrandon1/horaxhora/")
             speak("Google chrome is open now")
